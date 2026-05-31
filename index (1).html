@@ -1,0 +1,545 @@
+<!DOCTYPE html><html lang="hi"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-id="th-modified">धूप देश की, छाँव परदेश की — रचना आमंत्रण</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&amp;family=Noto+Sans+Devanagari:wght@400;500;600;700&amp;family=Cormorant+Garamond:wght@500;600;700&amp;display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --saffron: #D4A017;
+    --saffron-deep: #B8860B;
+    --indigo: #1B2B4B;
+    --gold: #F0C040;
+    --ink: #F5F0E8;
+    --ink-soft: #D8CFBC;
+    --grey: #8A9BB5;
+    --grey-l: #243555;
+    --bg: #0F1C33;
+    --bg-soft: #162240;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans Devanagari', system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.65;
+    font-size: 17px;
+  }
+
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0A1628 0%, #1B2B4B 55%, #0F2040 100%);
+    color: #fff;
+    padding: 72px 0 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(240,192,64,0.10) 0, transparent 45%),
+      radial-gradient(circle at 85% 75%, rgba(212,160,23,0.08) 0, transparent 50%);
+    pointer-events: none;
+  }
+  .hero .wrap { position: relative; z-index: 2; }
+
+  .eyebrow {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid rgba(240,192,64,0.5);
+    border-radius: 30px;
+    margin-bottom: 22px;
+    background: rgba(240,192,64,0.08);
+  }
+
+  h1.title {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-weight: 400;
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+    letter-spacing: -0.5px;
+  }
+
+  .lede {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-style: italic;
+    font-size: clamp(18px, 2.2vw, 22px);
+    color: rgba(255,255,255,0.92);
+    max-width: 760px;
+    line-height: 1.55;
+    margin-bottom: 30px;
+  }
+
+  .hero-meta {
+    display: flex; gap: 32px; flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    padding-top: 24px; margin-top: 32px;
+    color: #fff;
+  }
+  .hero-meta .pair { font-size: 14px; }
+  .hero-meta .pair .k {
+    display: block; color: var(--gold);
+    font-size: 11px; letter-spacing: 1.5px;
+    font-weight: 600; margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+  .hero-meta .pair .v {
+    color: #fff; font-weight: 600; font-size: 16px;
+  }
+
+  /* SECTIONS */
+  section { padding: 64px 0; }
+  section.alt { background: #0D2137; }
+  section.light {
+    background: #F5EDD8;
+  }
+  section.light h2.section-title { color: #1B2B4B; }
+  section.light .section-sub { color: #4A3F2E; }
+  section.light .section-sub strong { color: #1B2B4B; }
+  section.light p { color: #3D3020; }
+  section.light .countries .chip {
+    background: #fff;
+    border: 1px solid rgba(27,43,75,0.25);
+    color: #1B2B4B;
+  }
+
+  h2.section-title {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-weight: 400;
+    color: var(--gold);
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: 1.25;
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+  }
+  .section-sub {
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin-bottom: 36px;
+    max-width: 720px;
+  }
+  .section-sub strong { color: var(--ink); }
+
+  p { margin-bottom: 16px; color: var(--ink-soft); }
+
+  /* CARDS GRID — editor + launch */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  @media (max-width: 720px) { .cards { grid-template-columns: 1fr; } }
+
+  .card {
+    background: #162D45;
+    border: 1px solid rgba(240,192,64,0.25);
+    border-radius: 8px;
+    padding: 28px 26px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card .accent-bar {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 5px; background: var(--gold);
+    border-radius: 8px 0 0 8px;
+  }
+  .card .label {
+    font-size: 11px; letter-spacing: 1.8px;
+    color: var(--gold); font-weight: 700;
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .card h3 {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-weight: 400;
+    color: var(--ink);
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .card .role {
+    color: var(--grey);
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  .card p { font-size: 15px; line-height: 1.6; }
+
+  /* COUNTRIES LIST */
+  .countries {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-top: 18px;
+  }
+  .countries .chip {
+    background: #1B2B4B;
+    border: 1px solid rgba(240,192,64,0.3);
+    color: var(--gold);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px; font-weight: 500;
+  }
+
+  /* WHAT TO SEND — numbered list */
+  .send-list {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 26px;
+  }
+  @media (max-width: 720px) { .send-list { grid-template-columns: 1fr; } }
+  .send-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 18px 20px;
+    background: #162D45;
+    border: 1px solid rgba(240,192,64,0.18);
+    border-radius: 8px;
+  }
+  .send-item .num {
+    flex: 0 0 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--gold); color: #0F1C33;
+    font-weight: 700; font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .send-item .what {
+    font-weight: 600; color: var(--ink);
+    margin-bottom: 4px; font-size: 16px;
+  }
+  .send-item .note {
+    color: var(--grey); font-size: 14px; line-height: 1.5;
+  }
+
+  .submit-options {
+    background: rgba(240,192,64,0.07);
+    border-left: 4px solid var(--gold);
+    padding: 20px 24px;
+    border-radius: 4px;
+    margin-top: 20px;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  .submit-options strong { color: var(--gold); }
+
+  /* DEADLINE */
+  .deadline {
+    display: flex; align-items: center; gap: 24px;
+    background: linear-gradient(135deg, #1B2B4B 0%, #243555 100%);
+    border: 1px solid rgba(240,192,64,0.4);
+    color: #fff;
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    box-shadow: 0 6px 28px rgba(27,43,75,0.25);
+  }
+  .deadline .date-block {
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.25);
+    padding-right: 28px;
+  }
+  @media (max-width: 600px) {
+    .deadline .date-block { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.25); padding: 0 0 16px; width: 100%; }
+  }
+  .deadline .day {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 56px; line-height: 1;
+    color: var(--gold); font-weight: 400;
+  }
+  .deadline .month {
+    font-size: 16px; letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 6px; color: #fff; font-weight: 600;
+  }
+  .deadline .text {
+    font-size: 16px; line-height: 1.6;
+    color: rgba(255,255,255,0.92);
+  }
+  .deadline .text strong { color: var(--gold); }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, #0A1628 0%, #1B2B4B 100%);
+    border-top: 1px solid rgba(240,192,64,0.2);
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+  }
+  .cta-section h2 {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-weight: 400;
+    color: var(--gold);
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 14px;
+  }
+  .cta-section p {
+    color: rgba(255,255,255,0.80);
+    font-size: 17px;
+    max-width: 620px;
+    margin: 0 auto 32px;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: #0A1628;
+    padding: 18px 42px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 2px solid var(--gold);
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+  }
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+  .btn-secondary {
+    display: inline-block;
+    color: rgba(255,255,255,0.75);
+    padding: 14px 24px;
+    font-size: 15px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(240,192,64,0.4);
+    margin-top: 24px;
+    transition: all 0.2s ease;
+  }
+  .btn-secondary:hover { color: var(--gold); border-color: var(--gold); }
+  .or-divider {
+    color: rgba(255,255,255,0.4);
+    margin: 18px 0 4px;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #070F1E;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 14px;
+    border-top: 1px solid rgba(240,192,64,0.15);
+  }
+  footer .quote {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--gold);
+    max-width: 640px;
+    margin: 0 auto 18px;
+    line-height: 1.6;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* DECORATIVE WAVE — subtle nod to the sea journey */
+  .wave-divider {
+    height: 28px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 28' preserveAspectRatio='none'%3E%3Cpath d='M0,14 C150,28 350,0 600,14 C850,28 1050,0 1200,14 L1200,28 L0,28 Z' fill='%231B2B4B' opacity='0.15'/%3E%3C/svg%3E") repeat-x;
+    background-size: cover;
+    background-color: #F5EDD8;
+  }
+</style>
+<meta property="og:title" content="धूप देश की, छाँव परदेश की— रचना आमंत्रण">
+<meta name="description" content="प्रवासी हिंदी कथा-संकलन — रचना आमंत्रण">
+<meta property="og:description" content="प्रवासी हिंदी कथा-संकलन — रचना आमंत्रण">
+<meta property="og:type" content="website"></head>
+<body>
+
+<!-- ========== HERO ========== -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow ablefocused">रचना आमंत्रण  · प्रवासी कथा-संकलन</span>
+    <h1 class="title"><span style="color: rgba(250 , 199, 199, 1); font-family: docs-Roboto, Helvetica, Arial, sans-serif; font-size: 32px; letter-spacing: normal;" class=""><b class="">&nbsp;"धूप देश की, छाँव परदेस की"&nbsp;</b>&nbsp;</span></h1>
+    <p class="lede" >सात समुंदर पार बसी हमारी संस्कृति, संघर्ष और स्मृतियों को शब्दों में संजोने का एक विशेष आयोजन — प्रवासी हिंदी रचनाकारों के लिए।</p>
+
+    <div class="hero-meta">
+      <div class="pair">
+        <span class="k">संपादक</span>
+        <span class="v">अभिषेक त्रिपाठी&nbsp;</span>
+      </div>
+      <div class="pair">
+        <span class="k">पता&nbsp;</span>
+        <span class="v">बेलफास्ट,आयरलैंड&nbsp;</span>
+      </div>
+      <div class="pair">
+        <span class="k">अंतिम तिथि</span>
+        <span class="v">15 जून&nbsp;</span>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="wave-divider"></div>
+
+<!-- ========== INVITATION ========== -->
+<section class="light">
+  <div class="wrap">
+    <h2 class="section-title">आदरणीय रचनाकार बंधुओं और बहनों,</h2>
+    <p class="section-sub" ><b class="">सादर नमस्कार!</b></p>
+
+    <p class="  ablefocused" >अत्यंत हर्ष के साथ यह सूचित किया जा रहा है कि विदेश में निवास करने वाले हिंदी रचनाकारों की कहानियों का एक विशेष संकलन प्रकाशित किया जा रहा है — एक ऐसा संग्रह जो सात समुंदर पार बसी हमारी संस्कृति, संघर्ष, स्मृतियों और पहचान को विश्व-पटल पर सशक्त स्वर देगा।</p>
+
+    <p class="" >यदि आपके पास हिंदी में कोई मौलिक कहानी है — प्रवासी जीवन, अपनी जड़ों की खोज, परिवार-परंपरा अथवा आपके देश के सामाजिक-सांस्कृतिक जीवन से जुड़ी, विदेशी भाषा में किसी रचना का अनुवाद — तो आइए, इस ऐतिहासिक संकलन का हिस्सा बनिए।</p>
+  </div>
+</section>
+
+<!-- ========== EDITOR + LAUNCH CARDS ========== -->
+<section class="alt">
+  <div class="wrap">
+    <h2 class="section-title">संकलन के बारे में</h2>
+    <p class="section-sub" >यह पुस्तक भारतीय उच्चायोग, लंदन और भारतीय दूतावास, आयरलैंड के मार्गदर्शन में तैयार की जा रही है, और एक प्रतिष्ठित समारोह में विमोचित की जाएगी।</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="accent-bar"></div>
+        <div class="label">संपादक</div>
+        <h3 class="">अभिषेक त्रिपाठी&nbsp;</h3>
+        <div class="role">अध्यक्ष कविता आयरलैंड</div>
+        <p class="">हिंदी साहित्य एवं प्रवासी संस्कृति के अग्रिम हस्ताक्षर&nbsp; जो विश्व-स्तर पर हिंदी की समृद्ध परंपरा को नई पीढ़ी तक पहुँचाने के लिए समर्पित हैं।</p>
+      </div>
+
+      <div class="card">
+        <div class="accent-bar"></div>
+        <div class="label">कहानी संग्रह&nbsp;</div>
+        <h3 class="">प्रवासी रचनाकार मंच&nbsp;</h3>
+        <div class="role">हिन्दी आयरलैंड&nbsp;</div>
+        <p class="">प्रवासी हिन्दी रचनाकारों को मंच प्रदान करने का एक गिलहरी प्रयास।&nbsp;</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHO WE INVITE ========== -->
+<section class="light">
+  <div class="wrap">
+    <h2 class="section-title">आमंत्रण किनके लिए?</h2>
+    <p class="section-sub" >यह आमंत्रण प्रवासी<span class="" ><b>&nbsp;</b>देशों</span> में निवास करने वाले समस्त हिंदी रचनाकारों के लिए है — वे लेखक जो अवसरों की तलाश में अपने-अपने घोसलें छोड़ सात समुंदर पार पहुँचे, परदेस में नए घोसलें बनाए और जिन्होंने नई धरती पर अपनी संस्कृति, भाषा और परंपरा को संजोए रखा है।</p>
+
+    <div class="countries">
+      <span class="chip"><br></span>
+      <span class="chip"><br></span>
+      <span class="chip"><br></span>
+      <span class="chip"><br></span>
+      <span class="chip"><br></span>
+      <span class="chip"><br></span>
+      <span class="chip"><br></span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHAT TO SEND ========== -->
+<section class="alt">
+  <div class="wrap">
+    <h2 class="section-title">अपनी रचना के साथ क्या-क्या भेजें?</h2>
+    <p class="section-sub">कृपया निम्नलिखित सभी विवरण संलग्न करें — ये सभी आपकी कहानी के साथ पुस्तक में प्रकाशित किए जाएँगे।</p>
+
+    <div class="send-list">
+      <div class="send-item">
+        <div class="num">१</div>
+        <div>
+          <div class="what">आपकी मौलिक हिंदी कहानी</div>
+          <div class="note">वर्ड दस्तावेज़ (.docx) संलग्न करें, अथवा सीधे फ़ॉर्म में टाइप / पेस्ट करें।</div>
+        </div>
+      </div>
+      <div class="send-item">
+        <div class="num">२</div>
+        <div>
+          <div class="what">आपका पूरा नाम</div>
+          <div class="note">जैसा आप पुस्तक में प्रकाशित करवाना चाहते हैं।</div>
+        </div>
+      </div>
+      <div class="send-item">
+        <div class="num">३</div>
+        <div>
+          <div class="what">वर्तमान निवास स्थान</div>
+          <div class="note">शहर एवं देश का उल्लेख करें।</div>
+        </div>
+      </div>
+      <div class="send-item">
+        <div class="num">४</div>
+        <div>
+          <div class="what">आपका छायाचित्र (फोटो)</div>
+          <div class="note">एक स्पष्ट, औपचारिक चित्र — JPG या PNG।</div>
+        </div>
+      </div>
+      <div class="send-item" style="grid-column: 1 / -1;">
+        <div class="num">५</div>
+        <div>
+          <div class="what">आपका संक्षिप्त परिचय</div>
+          <div class="note">लगभग 100–150 शब्दों में — आपकी रचनात्मक यात्रा, प्रकाशन, और आप अपने पाठकों से क्या जुड़ाव चाहते हैं।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit-options">
+      <strong>एक नोट:</strong>  आप अपनी कहानी का वर्ड दस्तावेज़ (.docx) फ़ॉर्म में अटैच कर सकते हैं, अथवा कहानी को सीधे फ़ॉर्म के टेक्स्ट-बॉक्स में टाइप या पेस्ट कर सकते हैं — दोनों ही स्वीकार्य हैं।
+    </div>
+  </div>
+</section>
+
+<!-- ========== DEADLINE ========== -->
+<section class="light">
+  <div class="wrap">
+    <div class="deadline">
+      <div class="date-block">
+        <div class="day">15&nbsp;</div>
+        <div class="month">जून&nbsp;</div>
+      </div>
+      <div class="text">
+        <strong class="">रचना भेजने की अंतिम तिथि।</strong><br>
+        कृपया इसी तिथि तक अपनी कहानी एवं समस्त विवरण प्रस्तुत कीजिए।
+        विलंबित रचनाएँ संकलन में सम्मिलित नहीं की जा सकेंगी।
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta-section">
+  <div class="wrap">
+    <h2 class="">अपनी कहानी प्रस्तुत कीजिए</h2>
+    <p>नीचे दिए गए बटन पर क्लिक करके फ़ॉर्म खोलें। आप अपनी कहानी सीधे टाइप / पेस्ट कर सकते हैं, अथवा वर्ड दस्तावेज़ अटैच कर सकते हैं।</p>
+
+    <!--
+      ⚠️  REPLACE THE href BELOW WITH YOUR GOOGLE FORM URL.
+      Steps:
+      1. Create the Google Form (see Google_Form_Setup_Guide.md)
+      2. Click "Send" → copy the link (https://forms.gle/XXXXXX)
+      3. Paste it as the href value below.
+    -->
+    <a class="btn-primary" href="https://forms.gle/T6nq4edGoEHNF8cD9" target="_blank" rel="noopener">
+      फ़ॉर्म भरकर रचना भेजें  →
+    </a>
+
+    <div class="or-divider">— अथवा —</div>
+
+  <a class="btn-secondary" href="mailto:hindi.ireland@gmail.com?subject=%E0%A4%B0%E0%A4%9A%E0%A4%A8%E0%A4%BE%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%81%E0%A4%A4%E0%A4%BF%20%E2%80%94%20%E0%A4%B8%E0%A4%BE%E0%A4%A4%20%E0%A4%B8%E0%A4%AE%E0%A5%81%E0%A4%82%E0%A4%A6%E0%A4%B0%20%E0%A4%AA%E0%A4%BE%E0%A4%B0">
+  ईमेल द्वारा भेजें  ·  hindi.ireland@gmail.com
+</a>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="wrap">
+    <p class="quote">"शब्द कभी डूबते नहीं — वे सात समुंदरों के पार भी अपनी जड़ें खोज ही लेते हैं।"</p>
+    <p class="  ablefocused">संपादक मंडल, धूप देश की, छाँव परदेश की</p>
+    <p style="margin-top:8px;font-size:13px;opacity:0.7;" class="">© 2026  ·  समस्त रचनाओं का कॉपीराइट संबंधित लेखकों के पास सुरक्षित है</p>
+  </div>
+</footer>
+
+
+
+</body></html>
